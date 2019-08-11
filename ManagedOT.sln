@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManagedOT", "ManagedOT\ManagedOT.csproj", "{D010247C-FF00-4E25-A0E1-3E139A1C6315}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagedOT.UnitTests", "ManagedOT.UnitTests\ManagedOT.UnitTests.csproj", "{C76E64A2-D690-4B4B-91E9-C7890E69E5C2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D010247C-FF00-4E25-A0E1-3E139A1C6315} = {D010247C-FF00-4E25-A0E1-3E139A1C6315}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D010247C-FF00-4E25-A0E1-3E139A1C6315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D010247C-FF00-4E25-A0E1-3E139A1C6315}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D010247C-FF00-4E25-A0E1-3E139A1C6315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D010247C-FF00-4E25-A0E1-3E139A1C6315}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C76E64A2-D690-4B4B-91E9-C7890E69E5C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C76E64A2-D690-4B4B-91E9-C7890E69E5C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C76E64A2-D690-4B4B-91E9-C7890E69E5C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C76E64A2-D690-4B4B-91E9-C7890E69E5C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3A0A5BD-B251-4C6D-88D7-FE97DD1C0281}
+	EndGlobalSection
+EndGlobal

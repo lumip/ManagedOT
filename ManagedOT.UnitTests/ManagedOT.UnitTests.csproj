@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+    <RootNamespace>ManagedOT.UnitTests</RootNamespace>
+    <AssemblyName>ManagedOT.UnitTests</AssemblyName>
+    <AssemblyVersion>0.1.0</AssemblyVersion>
+    <Title>ManagedOT Unit Tests</Title>
+    <Authors>Lukas Prediger; Jonas Nagy-Kuhlen</Authors>
+    <Description>Unit Tests for ManagedOT Library</Description>
+    <Copyright>Copyright © 2019 Lukas Prediger and Jonas Nagy-Kuhlen</Copyright>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ManagedOT\ManagedOT.csproj" />
+  </ItemGroup>
+
+</Project>
