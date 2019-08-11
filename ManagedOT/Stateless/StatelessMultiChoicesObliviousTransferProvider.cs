@@ -4,7 +4,7 @@ using System.Text;
 
 using ManagedOT.Networking;
 
-namespace ManagedOT
+namespace ManagedOT.Stateless
 {
     /// <summary>
     /// A 1-out-of-N OT channel provider that deals out channels for a stateless OT implementation.

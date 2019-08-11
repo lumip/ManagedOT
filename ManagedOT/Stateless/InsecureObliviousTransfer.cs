@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 using ManagedOT.Networking;
 
-namespace ManagedOT
+namespace ManagedOT.Stateless
 {
     public class InsecureObliviousTransfer : StatelessMultiChoicesObliviousTransfer
     {

@@ -11,7 +11,7 @@ using ManagedOT.Buffers;
 using ManagedOT.Cryptography;
 using ManagedOT.Networking;
 
-namespace ManagedOT
+namespace ManagedOT.Stateless
 {
     /// <summary>
     /// 1-out-of-N Oblivious Transfer implementation following a protocol by Naor and Pinkas.

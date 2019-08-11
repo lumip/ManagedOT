@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 using ManagedOT.Networking;
 
-namespace ManagedOT
+namespace ManagedOT.Stateless
 {
     /// <summary>
     /// Common base class for stateless 1-out-of-N Oblivious Transfer implementations.

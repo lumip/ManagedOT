@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 using ManagedOT.Networking;
 
-namespace ManagedOT
+namespace ManagedOT.Stateless
 {
     /// <summary>
     /// A stateless 1-out-of-N Oblivious Transfer implementation.

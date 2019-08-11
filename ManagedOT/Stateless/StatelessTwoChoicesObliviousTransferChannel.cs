@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 using ManagedOT.Networking;
 
-namespace ManagedOT
+namespace ManagedOT.Stateless
 {
     /// <summary>
     /// A wrapper turning a stateless 1-out-of-2 OT implementation into an OT channel.

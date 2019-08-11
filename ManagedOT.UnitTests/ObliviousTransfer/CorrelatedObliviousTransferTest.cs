@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Net;
 
 using ManagedOT.Cryptography;
+using ManagedOT.Stateless;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
