@@ -5,6 +5,8 @@ using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 
+using ManagedOT.Util;
+
 namespace ManagedOT.Networking
 {
     public class StreamMessageChannel : IMessageChannel

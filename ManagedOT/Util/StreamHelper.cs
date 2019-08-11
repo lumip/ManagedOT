@@ -6,9 +6,9 @@ using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace ManagedOT
+namespace ManagedOT.Util
 {
-    public static class StreamHelper
+    internal static class StreamHelper
     {
         public static byte[] Read(this Stream stream, int count)
         {

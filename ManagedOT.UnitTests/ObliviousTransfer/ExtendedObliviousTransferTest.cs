@@ -8,6 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using ManagedOT.UnitTests.Util;
 using ManagedOT.Networking;
+using ManagedOT.Cryptography;
 
 namespace ManagedOT.UnitTests
 {

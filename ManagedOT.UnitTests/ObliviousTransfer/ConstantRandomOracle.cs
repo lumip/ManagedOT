@@ -4,6 +4,8 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+using ManagedOT.Cryptography;
+
 namespace ManagedOT.UnitTests
 {
     public class ConstantRandomOracle : RandomOracle

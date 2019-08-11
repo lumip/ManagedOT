@@ -6,7 +6,7 @@ using System.Text;
 using System.Numerics;
 using System.Security.Cryptography;
 
-namespace ManagedOT
+namespace ManagedOT.Cryptography
 {
     public static class RandomNumberGeneratorHelper
     {

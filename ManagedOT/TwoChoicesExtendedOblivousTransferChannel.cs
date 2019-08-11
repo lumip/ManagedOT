@@ -8,6 +8,7 @@ using System.Diagnostics;
 
 using ManagedOT.Buffers;
 using ManagedOT.Util;
+using ManagedOT.Cryptography;
 
 namespace ManagedOT
 {

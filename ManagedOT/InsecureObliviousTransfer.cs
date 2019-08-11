@@ -5,6 +5,8 @@ using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 
+using ManagedOT.Networking;
+
 namespace ManagedOT
 {
     public class InsecureObliviousTransfer : StatelessMultiChoicesObliviousTransfer

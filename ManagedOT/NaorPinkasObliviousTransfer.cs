@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 
 using ManagedOT.Buffers;
+using ManagedOT.Cryptography;
+using ManagedOT.Networking;
 
 namespace ManagedOT
 {

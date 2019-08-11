@@ -5,6 +5,8 @@ using System.Collections;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 
+using ManagedOT.Cryptography;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ManagedOT.UnitTests

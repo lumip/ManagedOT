@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 
+using ManagedOT.Cryptography;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using ManagedOT.UnitTests.Util;

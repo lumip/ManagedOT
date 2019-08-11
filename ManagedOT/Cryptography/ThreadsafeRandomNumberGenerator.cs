@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 
-namespace ManagedOT
+namespace ManagedOT.Cryptography
 {
     public class ThreadsafeRandomNumberGenerator : RandomNumberGenerator
     {

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
+using ManagedOT.Cryptography;
+using ManagedOT.Networking;
+
 namespace ManagedOT
 {
     public class TwoChoicesCorrelatedExtendedObliviousTransferProvider : IObliviousTransferProvider<ITwoChoicesCorrelatedObliviousTransferChannel>
