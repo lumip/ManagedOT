@@ -68,15 +68,5 @@ namespace ManagedOT
         {
             return ReceiveAsync(channel, selectionIndices.ToArray(), 2, numberOfInvocations, numberOfMessageBytes);
         }
-
-        public Task SendAsync(IMessageChannel channel, Quadruple<byte[]>[] options, int numberOfInvocations, int numberOfMessageBytes)
-        {
-            return SendAsync(channel, options.Select(quadruple => quadruple.ToArray()).ToArray(), 4, numberOfInvocations, numberOfMessageBytes);
-        }
-
-        public Task<byte[][]> ReceiveAsync(IMessageChannel channel, QuadrupleIndexArray selectionIndices, int numberOfInvocations, int numberOfMessageBytes)
-        {
-            return ReceiveAsync(channel, selectionIndices.ToArray(), 4, numberOfInvocations, numberOfMessageBytes);
-        }
     }
 }

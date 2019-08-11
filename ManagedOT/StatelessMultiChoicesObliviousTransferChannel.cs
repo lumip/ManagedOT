@@ -36,15 +36,5 @@ namespace ManagedOT
         {
             return _statelessOT.ReceiveAsync(Channel, selectionIndices, numberOfOptions, numberOfInvocations, numberOfMessageBytes);
         }
-
-        public Task SendAsync(Quadruple<byte[]>[] options, int numberOfInvocations, int numberOfMessageBytes)
-        {
-            return _statelessOT.SendAsync(Channel, options, numberOfInvocations, numberOfMessageBytes);
-        }
-
-        public Task<byte[][]> ReceiveAsync(QuadrupleIndexArray selectionIndices, int numberOfInvocations, int numberOfMessageBytes)
-        {
-            return _statelessOT.ReceiveAsync(Channel, selectionIndices, numberOfInvocations, numberOfMessageBytes);
-        }
     }
 }

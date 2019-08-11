@@ -67,7 +67,7 @@ namespace ManagedOT
             Task writeCsTask = WriteGroupElements(channel, listOfCs);
             Task<BigInteger[]> readDsTask = ReadGroupElements(channel, numberOfInvocations);
 
-            Quadruple<BigInteger> listOfExponentiatedCs = new Quadruple<BigInteger>();
+            BigInteger[] listOfExponentiatedCs = new BigInteger[numberOfOptions];
             Parallel.For(1, numberOfOptions, i =>
             {
                 listOfExponentiatedCs[i] = BigInteger.ModPow(listOfCs[i], alpha, _parameters.P);

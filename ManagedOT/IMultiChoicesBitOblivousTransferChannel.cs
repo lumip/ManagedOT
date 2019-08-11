@@ -16,9 +16,6 @@ namespace ManagedOT
         Task SendAsync(BitArray[][] options, int numberOfOptions, int numberOfInvocations);
         Task<BitArray> ReceiveAsync(int[] selectionIndices, int numberOfOptions, int numberOfInvocations);
 
-        Task SendAsync(BitQuadrupleArray options, int numberOfInvocations);
-        Task<BitArray> ReceiveAsync(QuadrupleIndexArray selectionIndices, int numberOfInvocations);
-
         /// <summary>
         /// The network channel the OT operates on, uniquely identifying the pair of parties involved in the OT.
         /// </summary>
