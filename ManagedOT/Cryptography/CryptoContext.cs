@@ -10,32 +10,31 @@ namespace ManagedOT.Cryptography
     public sealed class CryptoContext : IDisposable
     {
         private RandomNumberGenerator _randomNumberGenerator;
-        private HashAlgorithm _hashAlgorithm;
+        private HashAlgorithmProvider _hashAlgorithmProvider;
 
-        public CryptoContext(RandomNumberGenerator randomNumberGenerator, HashAlgorithm hashAlgorithm)
+        public CryptoContext(RandomNumberGenerator randomNumberGenerator, HashAlgorithmProvider hashAlgorithmProvider)
         {
             if (randomNumberGenerator == null)
                 throw new ArgumentNullException(nameof(randomNumberGenerator));
 
-            if (hashAlgorithm == null)
-                throw new ArgumentNullException(nameof(hashAlgorithm));
+            if (hashAlgorithmProvider == null)
+                throw new ArgumentNullException(nameof(hashAlgorithmProvider));
 
             _randomNumberGenerator = randomNumberGenerator;
-            _hashAlgorithm = hashAlgorithm;
+            _hashAlgorithmProvider = hashAlgorithmProvider;
         }
 
         public static CryptoContext CreateDefault()
         {
             return new CryptoContext(
                 RandomNumberGenerator.Create(),
-                SHA1.Create()
+                new SHA256Provider()
             );
         }
 
         public void Dispose()
         {
             _randomNumberGenerator.Dispose();
-            _hashAlgorithm.Dispose();
         }
 
         public RandomNumberGenerator RandomNumberGenerator
@@ -46,11 +45,11 @@ namespace ManagedOT.Cryptography
             }
         }
 
-        public HashAlgorithm HashAlgorithm
+        public HashAlgorithmProvider HashAlgorithmProvider
         {
             get
             {
-                return _hashAlgorithm;
+                return _hashAlgorithmProvider;
             }
         }
     }

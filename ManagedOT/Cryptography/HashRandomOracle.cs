@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using System.Threading.Tasks;
-using System.Security.Cryptography;
 
 namespace ManagedOT.Cryptography
 {
     public class HashRandomOracle : RandomOracle
     {
-        private HashAlgorithm _hashAlgorithm;
+        private ThreadsafeHashAlgorithm _hashAlgorithm;
 
-        public HashRandomOracle(HashAlgorithm hashAlgorithm)
+        public HashRandomOracle(ThreadsafeHashAlgorithm hashAlgorithm)
         {
             if (hashAlgorithm == null)
                 throw new ArgumentNullException(nameof(hashAlgorithm));
@@ -22,11 +20,7 @@ namespace ManagedOT.Cryptography
 
         public override IEnumerable<byte> Invoke(byte[] query)
         {
-            byte[] seed;
-            lock (_hashAlgorithm)
-            {
-                seed = _hashAlgorithm.ComputeHash(query);
-            }
+            byte[] seed = _hashAlgorithm.ComputeHash(query);
 
             using (MemoryStream stream = new MemoryStream(seed.Length + 4))
             {
@@ -39,11 +33,7 @@ namespace ManagedOT.Cryptography
                     stream.Write(BitConverter.GetBytes(counter), 0, 4);
                     stream.Position = 0;
 
-                    byte[] block;
-                    lock (_hashAlgorithm)
-                    {
-                        block = _hashAlgorithm.ComputeHash(stream);
-                    }
+                    byte[] block = _hashAlgorithm.ComputeHash(stream);
 
                     foreach (byte blockByte in block)
                         yield return blockByte;

@@ -46,7 +46,7 @@ namespace ManagedOT
 
                 Debug.Assert(maskedOptions[i][s].Length == numberOfMessageBytes);
                 byte[] query = tTransposed.GetColumn((uint)i).ToBytes();
-                results[i] = RandomOracle.Mask(maskedOptions[i][s], query);
+                results[i] = RandomOracleProvider.Create().Mask(maskedOptions[i][s], query);
             });
             return results;
         }
@@ -80,7 +80,7 @@ namespace ManagedOT
                     if (j == 1)
                         qRow.Xor(SenderChoices);
                     byte[] query = qRow.ToBytes();
-                    maskedOptions[i][j] = RandomOracle.Mask(options[i][j], query);
+                    maskedOptions[i][j] = RandomOracleProvider.Create().Mask(options[i][j], query);
                 }
             });
 

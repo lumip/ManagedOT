@@ -33,7 +33,7 @@ namespace ManagedOT
                     if (j == 1)
                         qRow.Xor(SenderChoices);
                     byte[] query = qRow.ToBytes();
-                    options[i][j] = RandomOracle.Invoke(query).Take(numberOfMessageBytes).ToArray();
+                    options[i][j] = RandomOracleProvider.Create().Invoke(query).Take(numberOfMessageBytes).ToArray();
                 }
             });
 
@@ -52,7 +52,7 @@ namespace ManagedOT
                 int s = Convert.ToInt32(selectionIndices[i].Value);
 
                 byte[] query = tTransposed.GetColumn((uint)i).ToBytes();
-                results[i] = RandomOracle.Invoke(query).Take(numberOfMessageBytes).ToArray();
+                results[i] = RandomOracleProvider.Create().Invoke(query).Take(numberOfMessageBytes).ToArray();
             });
 
             return Task.FromResult(results);

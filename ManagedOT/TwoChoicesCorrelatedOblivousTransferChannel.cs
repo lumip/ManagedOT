@@ -50,19 +50,20 @@ namespace ManagedOT
             Parallel.For(0, numberOfInvocations, i =>
             {
                 Debug.Assert(correlationStrings[i].Length == numberOfMessageBytes);
+                RandomOracle randomOracle = RandomOracleProvider.Create();
 
                 options[i] = new Pair<byte[]>();
 
                 BitArray qRow = q.GetRow((uint)i);
 
                 byte[] query = qRow.ToBytes();
-                options[i][0] = RandomOracle.Invoke(query).Take(numberOfMessageBytes).ToArray();
+                options[i][0] = randomOracle.Invoke(query).Take(numberOfMessageBytes).ToArray();
 
                 options[i][1] = ByteBuffer.Xor(correlationStrings[i], options[i][0]);
 
                 query = (qRow ^ SenderChoices).ToBytes();
 
-                maskedOptions[i] = new[] { RandomOracle.Mask(options[i][1], query) };
+                maskedOptions[i] = new[] { randomOracle.Mask(options[i][1], query) };
                 Debug.Assert(maskedOptions[i][0].Length == numberOfMessageBytes);
 
             });
@@ -89,17 +90,19 @@ namespace ManagedOT
                 Debug.Assert(maskedOptions[i].Length == 1);
                 Debug.Assert(maskedOptions[i][0].Length == numberOfMessageBytes);
 
+                RandomOracle randomOracle = RandomOracleProvider.Create();
+
                 int s = Convert.ToInt32(selectionIndices[i].Value);
 
                 byte[] query = tTransposed.GetColumn((uint)i).ToBytes();
 
                 if (s == 0)
                 {
-                    results[i] = RandomOracle.Invoke(query).Take(numberOfMessageBytes).ToArray();
+                    results[i] = randomOracle.Invoke(query).Take(numberOfMessageBytes).ToArray();
                 }
                 else
                 {
-                    results[i] = RandomOracle.Mask(maskedOptions[i][0], query);
+                    results[i] = randomOracle.Mask(maskedOptions[i][0], query);
                 }
             });
             return results;

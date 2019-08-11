@@ -31,8 +31,8 @@ namespace ManagedOT
     {
         private ITwoChoicesObliviousTransferChannel _baseOT;
 
-        protected int SecurityParameter { get; private set; }
-        protected RandomOracle RandomOracle { get; private set; }
+        protected int SecurityParameter { get; }
+        protected HashRandomOracleProvider RandomOracleProvider { get; }
 
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace ManagedOT
         public TwoChoicesExtendedObliviousTransferChannelBase(ITwoChoicesObliviousTransferChannel baseOT, int securityParameter, CryptoContext cryptoContext)
         {
             RandomNumberGenerator = new ThreadsafeRandomNumberGenerator(cryptoContext.RandomNumberGenerator);
-            RandomOracle = new HashRandomOracle(cryptoContext.HashAlgorithm);
+            RandomOracleProvider = new HashRandomOracleProvider(cryptoContext.HashAlgorithmProvider);
             SecurityParameter = securityParameter;
             _baseOT = baseOT;
             _senderState = new SenderState();
@@ -95,7 +95,7 @@ namespace ManagedOT
             for (int k = 0; k < SecurityParameter; ++k)
             {
                 Debug.Assert(seeds[k].Length == requiredBytes);
-                _senderState.SeededRandomOracles[k] = RandomOracle.Invoke(seeds[k]);
+                _senderState.SeededRandomOracles[k] = RandomOracleProvider.Create().Invoke(seeds[k]);
             }
         }
 
@@ -128,8 +128,8 @@ namespace ManagedOT
             for (int k = 0; k < SecurityParameter; ++k)
             {
                 _receiverState.SeededRandomOracles[k] = new Pair<IEnumerable<byte>>(
-                    RandomOracle.Invoke(seeds[k][0]),
-                    RandomOracle.Invoke(seeds[k][1])
+                    RandomOracleProvider.Create().Invoke(seeds[k][0]),
+                    RandomOracleProvider.Create().Invoke(seeds[k][1])
                 );
             };
 
