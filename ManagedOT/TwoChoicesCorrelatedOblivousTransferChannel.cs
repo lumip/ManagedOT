@@ -56,7 +56,7 @@ namespace ManagedOT
                 byte[] query = qRow.ToBytes();
                 options[i][0] = RandomOracle.Invoke(query).Take(numberOfMessageBytes).ToArray();
 
-                options[i][1] = BitArray.Xor(correlationStrings[i], options[i][0]);
+                options[i][1] = ByteBuffer.Xor(correlationStrings[i], options[i][0]);
 
                 query = (qRow ^ SenderChoices).ToBytes();
 
