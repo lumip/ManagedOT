@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 using ManagedOT.Networking;
 
-namespace ManagedOT
+namespace ManagedOT.BitOT
 {
     /// <summary>
     /// A 1-out-of-N bit Oblivious Transfer channel implementation.

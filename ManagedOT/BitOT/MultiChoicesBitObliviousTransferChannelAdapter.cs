@@ -6,7 +6,7 @@ using System.Linq;
 
 using ManagedOT.Networking;
 
-namespace ManagedOT
+namespace ManagedOT.BitOT
 {
     /// <summary>
     /// Implements a 1-out-of-N bit Oblivious Transfer channel on top of any 1-out-of-N OT channel 

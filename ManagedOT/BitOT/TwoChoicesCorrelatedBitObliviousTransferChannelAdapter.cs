@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using ManagedOT.Networking;
 
-namespace ManagedOT
+namespace ManagedOT.BitOT
 {
     /// <summary>
     /// Implements a 1-out-of-2 bit Correlated Oblivious Transfer channel on top of any 1-out-of-2 C-OT channel 

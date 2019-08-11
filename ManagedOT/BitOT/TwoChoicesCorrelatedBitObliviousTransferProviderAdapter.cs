@@ -4,7 +4,7 @@ using System.Text;
 
 using ManagedOT.Networking;
 
-namespace ManagedOT
+namespace ManagedOT.BitOT
 {
     /// <summary>
     /// Implements a 1-out-of-2 bit Correlated Oblivious Transfer channel provider using any 1-out-of-2 C-OT provider
